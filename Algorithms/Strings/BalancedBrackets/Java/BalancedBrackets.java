@@ -31,20 +31,17 @@ class BalancedBrackets{
       if (openBrackets.contains(c)) {
         stack.push(c);
       } else if (closedBrackets.contains(c)) {
-        if (stack.isEmpty()) {
+        if (stack.isEmpty() || !bracketsMatch(stack.pop(), c))
           return false;
-        } else {
-          char prev = stack.pop();
-          if (!bracketsMatch(prev, c)) return false;
-        }
       }
     }
     return true;
   }
 
+  // Taken from Templates/Java/BufferedIO/BufferedIOTemplate.java
   public static void main(String[] args) throws IOException {
-    BufferedReader br = new BufferedReader(new FileReader("io/tests.txt"));
-    BufferedWriter bw = new BufferedWriter(new FileWriter("io/solution.txt"));
+    BufferedReader br = new BufferedReader(new FileReader("../io/tests.txt"));
+    BufferedWriter bw = new BufferedWriter(new FileWriter("../io/java-sol.txt"));
 
     BalancedBrackets bb = new BalancedBrackets();
     boolean debug = true;
