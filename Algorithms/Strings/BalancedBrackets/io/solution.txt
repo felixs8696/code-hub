@@ -1,0 +1,4 @@
+true: '{}()[]'
+false: '{[}]'
+false: 'abs{asd}{asd}()[]]'
+true: '!&@rww(123([]{()[]}))'
