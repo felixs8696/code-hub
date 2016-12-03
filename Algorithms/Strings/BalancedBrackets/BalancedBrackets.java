@@ -18,7 +18,7 @@ class BalancedBrackets{
     closedBrackets.add(']');
   }
 
-  private boolean isMatch(char open, char closed) {
+  private boolean bracketsMatch(char open, char closed) {
     if ((open == '(' && closed == ')') || (open == '{' && closed == '}') || (open == '[' && closed == ']'))
       return true;
     return false;
@@ -31,9 +31,12 @@ class BalancedBrackets{
       if (openBrackets.contains(c)) {
         stack.push(c);
       } else if (closedBrackets.contains(c)) {
-        if (stack.isEmpty()) return false;
-        char prev = stack.pop();
-        if (!isMatch(prev, c)) return false;
+        if (stack.isEmpty()) {
+          return false;
+        } else {
+          char prev = stack.pop();
+          if (!bracketsMatch(prev, c)) return false;
+        }
       }
     }
     return true;
