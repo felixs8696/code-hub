@@ -5,7 +5,7 @@ class BalancedBrackets{
   HashSet<Character> openBrackets;
   HashSet<Character> closedBrackets;
 
-  // Edge Cases: Pop from empty stack
+  // Edge Cases: Pop from empty stack, Empty input
   public BalancedBrackets() {
     openBrackets = new HashSet<Character>();
     openBrackets.add('(');
