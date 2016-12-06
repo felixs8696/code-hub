@@ -296,7 +296,7 @@ class GraphTheory {
                       {0,0,0,0,0},
                       {0,0,0,0,0},
                       {1,0,0,0,0}};
-                      
+
     GraphTheory gT1d = new GraphTheory(5, true, matrix1);
     GraphTheory gT2d = new GraphTheory(5, true, matrix2);
     GraphTheory gT1u = new GraphTheory(5, false, matrix1);
