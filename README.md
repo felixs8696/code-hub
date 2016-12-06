@@ -13,8 +13,8 @@ A Compilation of Useful Templates, Algorithm Implementation, and Coding Challeng
 ```
 
 ### Naming Requirements
-- Java
-  - Unit Test File: `[File_to_Test]Test.java`
+- Java Unit Test File: `[File_to_Test]Test.java`
+- Python Unit Test File: `[File_to_Test]Test.py`
 
 ### Testing
 **Java:**
