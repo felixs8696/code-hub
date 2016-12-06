@@ -1,5 +1,5 @@
 # Code Hub
-*A Compilation of Useful Templates, Algorithm Implementation, and Coding Challenge Solutions*
+*A Compilation of Useful Templates, Algorithm Implementations, and Coding Challenge Solutions*
 
 ### Contents
 ```
