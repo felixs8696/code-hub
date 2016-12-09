@@ -48,7 +48,7 @@ do
   esac
 done
 
-if [[ $topic != "None" && ! -d Algorithms/$folder/$topic ]]; then
+if [[ $topic != "None" ]]; then
   echo -n "New Algorithm: "
   read algorithm
   algorithm=$algorithm | sed -E "s~(^|\s)(.)~\U\2~g"
