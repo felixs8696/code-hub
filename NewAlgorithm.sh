@@ -23,7 +23,7 @@ do
 done
 
 topic="None"
-folders=(`ls -d Algorithms/Challenges/* | sed 's:.*/::'`)
+folders=(`ls -d Algorithms/$folder/* | sed 's:.*/::'`)
 
 PS3="Select A Topic: "
 select opt in "NEW" "${folders[@]}"
