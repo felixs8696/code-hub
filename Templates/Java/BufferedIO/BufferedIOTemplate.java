@@ -1,6 +1,18 @@
 import java.util.*;
 import java.io.*;
 
+/* Description
+ *
+ *
+ * Example:
+ *
+ * Input: [format]
+ * []
+ *
+ * Output: [format]
+ * []
+**/
+
 class BufferedIOTemplate {
 
   static String solve(String str) {

@@ -6,6 +6,8 @@ public class ExampleTest {
 
   @Test
   public void exampleTest() {
-   assertEquals(1, 1, DELTA);
+    Example obj = new Example();
+    // assertEquals(expected, actual, delta);
+    assertEquals(1, 1, DELTA);
   }
 }

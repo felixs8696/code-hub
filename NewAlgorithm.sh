@@ -60,14 +60,16 @@ if [[ $topic != "None" && ! -d Algorithms/$folder/$topic ]]; then
   mkdir -p $alg_dir/Python;
   # echo >$alg_dir/Python/$algorithm.py
   cp Templates/Bash/RunJUnitTests.sh $alg_dir/Java/RunJUnitTests.sh
-  cp Templates/Bash/RunJUnitTests.sh $alg_dir/Python/RunPyUnitTests.sh
+  cp Templates/Bash/RunPyUnitTests.sh $alg_dir/Python/RunPyUnitTests.sh
 
-  # Create Java Starter Files
+  # Create Java Starter / Test Files
   cp -rf Templates/Java/BufferedIO/io $alg_dir/Java/io
   cp Templates/Java/BufferedIO/BufferedIOTemplate.java $alg_dir/Java/$algorithm.java
   perl -pi -e "s/BufferedIOTemplate/$algorithm/g" $alg_dir/Java/$algorithm.java
+  cp Templates/Java/jUnitTest/ExampleTest.java $alg_dir/Java/${algorithm}Test.java
+  perl -pi -e "s/Example/$algorithm/g" $alg_dir/Java/${algorithm}Test.java
 
-  # Create Python Starter Files
+  # Create Python Starter / Test Files
   cp -rf Templates/Python/FileIO/io $alg_dir/Python/io
   cp Templates/Python/FileIO/fileio.py $alg_dir/Python/$algorithm.py
   cp Templates/Python/UnitTest/ExampleTest.py $alg_dir/Python/${algorithm}Test.py

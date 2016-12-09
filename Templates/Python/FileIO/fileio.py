@@ -1,3 +1,15 @@
+"""
+Description
+
+Example:
+
+Input: [format]
+[]
+
+Output: [format]
+[]
+"""
+
 def solve(input):
     return str("solution")
 
