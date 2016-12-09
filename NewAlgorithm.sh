@@ -26,10 +26,10 @@ topic="None"
 folders=(`ls -d Algorithms/Challenges/* | sed 's:.*/::'`)
 
 PS3="Select A Topic: "
-select opt in "${folders[@]}" "New Topic"
+select opt in "NEW" "${folders[@]}"
 do
   case "$REPLY" in
-    $(( ${#folders[@]}+1 )) )
+    1 )
       echo -n "New Topic: "
       read topic
       topic=$topic | sed -E "s~(^|\s)(.)~\U\2~g"
@@ -58,8 +58,20 @@ if [[ $topic != "None" && ! -d Algorithms/$folder/$topic ]]; then
   mkdir -p $alg_dir;
   mkdir -p $alg_dir/Java;
   mkdir -p $alg_dir/Python;
-  echo >$alg_dir/Java/$algorithm.java
-  echo >$alg_dir/Python/$algorithm.py
+  # echo >$alg_dir/Python/$algorithm.py
+  cp Templates/Bash/RunJUnitTests.sh $alg_dir/Java/RunJUnitTests.sh
+  cp Templates/Bash/RunJUnitTests.sh $alg_dir/Python/RunPyUnitTests.sh
+
+  # Create Java Starter Files
+  cp -rf Templates/Java/BufferedIO/io $alg_dir/Java/io
+  cp Templates/Java/BufferedIO/BufferedIOTemplate.java $alg_dir/Java/$algorithm.java
+  perl -pi -e "s/BufferedIOTemplate/$algorithm/g" $alg_dir/Java/$algorithm.java
+
+  # Create Python Starter Files
+  cp -rf Templates/Python/FileIO/io $alg_dir/Python/io
+  cp Templates/Python/FileIO/fileio.py $alg_dir/Python/$algorithm.py
+  cp Templates/Python/UnitTest/ExampleTest.py $alg_dir/Python/${algorithm}Test.py
+  perl -pi -e "s/Example/$algorithm/g" $alg_dir/Python/${algorithm}Test.py
 
 else
   echo "Folder for $topic already exists."

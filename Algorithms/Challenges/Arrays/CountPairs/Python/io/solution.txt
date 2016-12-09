@@ -1,0 +1,5 @@
+solution: 'example1'
+solution: 'example2'
+solution: 'example3'
+solution: 'example4'
+solution: 'example5'
