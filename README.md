@@ -16,8 +16,8 @@
 
 ### Naming Requirements
 *Note: If you initialize your algorithm files using the bash `NewAlgorithm.sh` script, this will be handled for you.*
-- Java Unit Test File: `[File_to_Test]Test.java`
-- Python Unit Test File: `[File_to_Test]Test.py`
+- Java Unit Test File: `*Test.java`
+- Python Unit Test File: `*Test.py`
 
 ### Initializing New Algorithm Files
 1. Run bash script from root
