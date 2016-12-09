@@ -1,7 +1,13 @@
-# Code Hub
+Code Hub
+===================
+![Java Badge](https://img.shields.io/badge/Java-7, 8-yellow.svg?style=flat-square)
+![Python Badge](https://img.shields.io/badge/Python-2.7, 3.4, 3.5-green.svg?style=flat-square)
+![Bash Badge](https://img.shields.io/badge/language-bash-lightgrey.svg?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)
+
 *A Compilation of Useful Templates, Algorithm Implementations, and Coding Challenge Solutions*
 
-<img src="https://i.imgsafe.org/ae6f4b03c0.png" width="80%" alt="Graph Image">
+<img src="https://i.imgsafe.org/ae6f4b03c0.png" width="70%" alt="Graph Image">
 
 ### Contents
 ```
