@@ -1,6 +1,10 @@
 # Code Hub
 *A Compilation of Useful Templates, Algorithm Implementations, and Coding Challenge Solutions*
 
+<p align="center">
+  <img src="https://i.imgsafe.org/ae6f4b03c0.png" width="80%" alt="Graph Image">
+</p>
+
 ### Contents
 ```
 ├── Algorithms
