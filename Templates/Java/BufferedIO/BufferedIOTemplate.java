@@ -1,17 +1,20 @@
 import java.util.*;
 import java.io.*;
 
-/* Description
- *
- *
- * Example:
- *
- * Input: [format]
- * []
- *
- * Output: [format]
- * []
-**/
+/*
+Description
+
+Runtime:
+Space:
+
+Example:
+ 
+Input: [format]
+[]
+
+Output: [format]
+[]
+*/
 
 class BufferedIOTemplate {
 

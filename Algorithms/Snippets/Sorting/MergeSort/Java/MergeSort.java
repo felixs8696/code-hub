@@ -1,19 +1,20 @@
 import java.util.*;
 import java.io.*;
 
-/* Description
- * Stable sort an array of integers using divide and conquer
- * Runtime: Best: O(N log N), Average: O(N log N), Worst: O(N log N)
- * Space: O(N)
- *
- * Example:
- *
- * Input: int_array
- * [1, 6, 7, 4, 5]
- *
- * Output: int_array
- * [1, 4, 5, 6, 7]
-**/
+/*
+Description
+Stable sort an array of integers using divide and conquer
+Runtime: Best: O(N log N), Average: O(N log N), Worst: O(N log N)
+Space: O(N)
+
+Example:
+
+Input: int_array
+[1, 6, 7, 4, 5]
+
+Output: int_array
+[1, 4, 5, 6, 7]
+*/
 
 class MergeSort {
 
