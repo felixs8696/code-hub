@@ -18,9 +18,9 @@
 - Python Unit Test File: `[File_to_Test]Test.py`
 
 ### Initializing New Algorithm Files
+1. Run bash script from root
+2. Follow prompts
 ```
-# 1. Run bash script from root
-# 2. Follow prompts
 bash NewAlgorithm.sh
 ```
 
