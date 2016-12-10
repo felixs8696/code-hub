@@ -1,13 +1,17 @@
 """
 Description
+Return all integers that appear an odd number of times in an array
+
+Runtime: O(n)
+Space: O(n)
 
 Example:
 
-Input: [format]
-[]
+Input: int_array
+5 1 2 4 4 3 4 1 5
 
-Output: [format]
-[]
+Output: int_array
+2 3 4
 """
 
 def stringAsIntArr(str):

@@ -11,10 +11,10 @@ Space: O(n)
 Example:
 
 Input: int_array
-[]
+5 1 2 4 4 3 4 1 5
 
-Output: [format]
-[]
+Output: int_array
+2 3 4
 */
 
 class OddCountElements {
