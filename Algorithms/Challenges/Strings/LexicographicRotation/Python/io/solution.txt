@@ -1,0 +1,2 @@
+terota: 'rotate 1'
+aterot: 'rotate 0'

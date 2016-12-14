@@ -36,7 +36,7 @@ do
       echo  -e "Created new topic '$topic'\n"
       break;;
     *)
-      if [[ $REPLY -ge 1 && $REPLY -le ${#folders[@]} ]]; then
+      if [[ $REPLY -ge 1 && $REPLY -le $((${#folders[@]} + 1)) ]]; then
         topic=$opt
         topic=$topic | sed -E "s~(^|\s)(.)~\U\2~g"
         echo  -e "Selected '$topic'\n"
