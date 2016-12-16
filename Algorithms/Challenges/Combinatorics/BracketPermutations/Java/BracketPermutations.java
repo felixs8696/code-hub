@@ -3,17 +3,20 @@ import java.io.*;
 
 /*
 Description
+Write a function to generate all possible n pairs of balanced parentheses
 
-Runtime:
-Space:
+Answer: Similar to string permutations.
+
+Runtime: O(2^n)
+Space: O(2^n)
 
 Example:
 
-Input: [format]
-[]
+Input: n
+3
 
-Output: [format]
-[]
+Output: str_arr_as_string
+[{{{}}}, {{}{}}, {{}}{}, {}{{}}, {}{}{}]
 */
 
 class BracketPermutations {
