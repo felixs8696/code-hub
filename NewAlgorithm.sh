@@ -2,15 +2,17 @@
 folder="None"
 PS3='Select A Folder: '
 options=(`ls -d Algorithms/* | sed 's:.*/::'`)
-select opt in "${options[@]}" "Quit"
+select opt in "NEW" "${options[@]}"
 do
   case "$REPLY" in
-    $(( ${#options[@]}+1 )) )
-      echo "Exiting..."
-      exit 1
-      ;;
+    1 )
+      echo -n "New Folder: "
+      read folder
+      folder=$folder | sed -E "s~(^|\s)(.)~\U\2~g"
+      echo  -e "Created new folder '$folder'\n"
+      break;;
     *)
-      if [[ $REPLY -ge 1 && $REPLY -le ${#options[@]} ]]; then
+      if [[ $REPLY -ge 1 && $REPLY -le $((${#options[@]} + 1)) ]]; then
         folder=$opt
         folder=$folder | sed -E "s~(^|\s)(.)~\U\2~g"
         echo  -e "Selected '$folder'\n"
@@ -58,23 +60,29 @@ if [[ $topic != "None" ]]; then
   mkdir -p $alg_dir;
   mkdir -p $alg_dir/Java;
   mkdir -p $alg_dir/Python;
-  # echo >$alg_dir/Python/$algorithm.py
-  cp Templates/Bash/RunJUnitTests.sh $alg_dir/Java/RunJUnitTests.sh
-  cp Templates/Bash/RunPyUnitTests.sh $alg_dir/Python/RunPyUnitTests.sh
+  if [[ $folder == "Theory" ]]; then
+    cp Templates/Java/Starter/StarterTemplate.java $alg_dir/Java/$algorithm.java
+    perl -pi -e "s/StarterTemplate/$algorithm/g" $alg_dir/Java/$algorithm.java
+    cp Templates/Python/Starter/StarterTemplate.py $alg_dir/Python/$algorithm.py
+    perl -pi -e "s/solve/$algorithm/g" $alg_dir/Python/$algorithm.py
+  else
+    # echo >$alg_dir/Python/$algorithm.py
+    cp Templates/Bash/RunJUnitTests.sh $alg_dir/Java/RunJUnitTests.sh
+    cp Templates/Bash/RunPyUnitTests.sh $alg_dir/Python/RunPyUnitTests.sh
 
-  # Create Java Starter / Test Files
-  cp -rf Templates/Java/BufferedIO/io $alg_dir/Java/io
-  cp Templates/Java/BufferedIO/BufferedIOTemplate.java $alg_dir/Java/$algorithm.java
-  perl -pi -e "s/BufferedIOTemplate/$algorithm/g" $alg_dir/Java/$algorithm.java
-  cp Templates/Java/jUnitTest/ExampleTest.java $alg_dir/Java/${algorithm}Test.java
-  perl -pi -e "s/Example/$algorithm/g" $alg_dir/Java/${algorithm}Test.java
+    # Create Java Starter / Test Files
+    cp -rf Templates/Java/BufferedIO/io $alg_dir/Java/io
+    cp Templates/Java/BufferedIO/BufferedIOTemplate.java $alg_dir/Java/$algorithm.java
+    perl -pi -e "s/BufferedIOTemplate/$algorithm/g" $alg_dir/Java/$algorithm.java
+    cp Templates/Java/jUnitTest/ExampleTest.java $alg_dir/Java/${algorithm}Test.java
+    perl -pi -e "s/Example/$algorithm/g" $alg_dir/Java/${algorithm}Test.java
 
-  # Create Python Starter / Test Files
-  cp -rf Templates/Python/FileIO/io $alg_dir/Python/io
-  cp Templates/Python/FileIO/fileio.py $alg_dir/Python/$algorithm.py
-  cp Templates/Python/UnitTest/ExampleTest.py $alg_dir/Python/${algorithm}Test.py
-  perl -pi -e "s/Example/$algorithm/g" $alg_dir/Python/${algorithm}Test.py
-
+    # Create Python Starter / Test Files
+    cp -rf Templates/Python/FileIO/io $alg_dir/Python/io
+    cp Templates/Python/FileIO/fileio.py $alg_dir/Python/$algorithm.py
+    cp Templates/Python/UnitTest/ExampleTest.py $alg_dir/Python/${algorithm}Test.py
+    perl -pi -e "s/Example/$algorithm/g" $alg_dir/Python/${algorithm}Test.py
+  fi
 else
   echo "Folder for $topic already exists."
   exit 1
